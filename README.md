@@ -3,6 +3,23 @@ Python input and print function in Java
 
 This is just for fun!
 
+Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Step 2. Add the dependency
+```
+dependencies {
+    implementation 'com.github.bhuvaneshw:ioutils:v2.0'
+}
+```
+
 Sample code
 ```
 public class Main {
