@@ -20,6 +20,9 @@ dependencies {
 }
 ```
 
+### Latest Release
+[![](https://jitpack.io/v/Bhuvaneshw/ioutil.svg)](https://jitpack.io/#Bhuvaneshw/ioutil)
+
 ### Sample code
 ```
 public class Main {
@@ -43,3 +46,4 @@ public class Main {
 
 ### Output
 ![image](output.png)
+
