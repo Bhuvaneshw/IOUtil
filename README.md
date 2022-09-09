@@ -3,7 +3,7 @@ Python input and print function in Java
 
 This is just for fun!
 
-Add it in your root build.gradle at the end of repositories:
+### Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
     repositories {
@@ -13,27 +13,32 @@ allprojects {
 }
 ```
 
-Step 2. Add the dependency
+### Add the dependency
 ```
 dependencies {
     implementation 'com.github.bhuvaneshw:ioutils:v2.0'
 }
 ```
 
-Sample code
+### Sample code
 ```
 public class Main {
     public static void main(String[] args) {
         String name = input("Enter your name: ");
         int age = toInt(input("Enter your age: "));
-        ArrayList<Integer> ints = mapInt(input("Enter numbers separated by space: ").split(" "));
+        String[] strings = input("Enter numbers separated by space: ").split(" ");
+        ArrayList<Integer> ints = mapInt(strings);
         print("Your name is", name);
-        print("Your are", age >= 18 ? "Major" : "Minor");
+        print("Your are", age >= 18 ? "" : "not", "eligible to vote");
         for (int i : ints) {
             printEnd(", ", i);
         }
         print();
         print(ints);
+        printSep("-", ints.toArray());
     }
 }
 ```
+
+### Output
+![image](screenshot.png)
