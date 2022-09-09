@@ -8,13 +8,15 @@ public class Main {
     public static void main(String[] args) {
         String name = input("Enter your name: ");
         int age = toInt(input("Enter your age: "));
-        ArrayList<Integer> ints = mapInt(input("Enter numbers separated by space: ").split(" "));
+        String[] strings = input("Enter numbers separated by space: ").split(" ");
+        ArrayList<Integer> ints = mapInt(strings);
         print("Your name is", name);
-        print("Your are", age >= 18 ? "Major" : "Minor");
+        print("Your are", age >= 18 ? "" : "not", "eligible to vote");
         for (int i : ints) {
             printEnd(", ", i);
         }
         print();
         print(ints);
+        printSep("-", ints.toArray());
     }
 }

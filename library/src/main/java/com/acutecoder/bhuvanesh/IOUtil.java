@@ -5,84 +5,89 @@ import java.util.Scanner;
 
 public final class IOUtil {
 
-    public static void print(Object... s) {
-        printRaw(" ", "\n", s);
+    public static void print(Object... message) {
+        printRaw(" ", "\n", message);
     }
 
-    public static void printEnd(String end, Object... s) {
-        printRaw(" ", end, s);
+    public static void printEnd(String end, Object... message) {
+        printRaw(" ", end, message);
     }
 
-    public static void printSep(String sep, Object... s) {
-        printRaw(sep, "\n", s);
+    public static void printSep(String sep, Object... message) {
+        printRaw(sep, "\n", message);
     }
 
-    public static void printRaw(String sep, String end, Object... s) {
-        for (int i = 0; i < s.length; i++) {
-            Object m = s[i];
-            System.out.print(m + ((i != s.length - 1) ? sep : ""));
+    public static void printRaw(String seperator, String end, Object... message) {
+        for (int i = 0; i < message.length; i++) {
+            Object m = message[i];
+            if (String.valueOf(m).equals("")) continue;
+            System.out.print(m + ((i != message.length - 1) ? seperator : ""));
         }
         System.out.print(end);
     }
 
-    public static String input(String msg) {
-        printEnd("", msg);
-        Scanner s = new Scanner(System.in);
-        return s.nextLine();
+    public static String input(String message) {
+        return input(message, new Scanner(System.in));
     }
 
-    public static int toInt(String s) {
-        return Integer.parseInt(s);
+    public static String input(String message, Scanner scanner) {
+        printEnd("", message);
+        return scanner.nextLine();
     }
 
-    public static float toFloat(String s) {
-        return Float.parseFloat(s);
+    public static int toInt(String value) {
+        return Integer.parseInt(value);
     }
 
-    public static double toDouble(String s) {
-        return Double.parseDouble(s);
+    public static float toFloat(String value) {
+        return Float.parseFloat(value);
     }
 
-    public static long toLong(String s) {
-        return Long.parseLong(s);
+    public static double toDouble(String value) {
+        return Double.parseDouble(value);
     }
 
-    public static ArrayList<Integer> mapInt(String... s) {
+    public static long toLong(String value) {
+        return Long.parseLong(value);
+    }
+
+    public static ArrayList<Integer> mapInt(String... stringValues) {
         ArrayList<Integer> l = new ArrayList<>();
-        for (String a : s) {
+        for (String a : stringValues) {
             l.add(Integer.parseInt((String) a));
         }
         return l;
     }
 
-    public static ArrayList<Float> mapFloat(String... s) {
+    public static ArrayList<Float> mapFloat(String... stringValues) {
         ArrayList<Float> l = new ArrayList<>();
-        for (String a : s) {
+        for (String a : stringValues) {
             l.add(Float.parseFloat((String) a));
         }
         return l;
     }
 
-    public static ArrayList<Double> mapDouble(String... s) {
+    public static ArrayList<Double> mapDouble(String... stringValues) {
         ArrayList<Double> l = new ArrayList<>();
-        for (String a : s) {
+        for (String a : stringValues) {
             l.add(Double.parseDouble((String) a));
         }
         return l;
     }
 
-    public static ArrayList<Long> mapLong(String... s) {
+    public static ArrayList<Long> mapLong(String... stringValues) {
         ArrayList<Long> l = new ArrayList<>();
-        for (String a : s) {
+        for (String a : stringValues) {
             l.add(Long.parseLong((String) a));
         }
         return l;
     }
 
-    public static ArrayList<String> map(Object... o) {
+    public static ArrayList<String> map(Object[] values) {
         ArrayList<String> l = new ArrayList<>();
-        for (Object a : o) {
+        for (Object a : values) {
             l.add(String.valueOf(a));
+            print(a);
         }
         return l;
     }
