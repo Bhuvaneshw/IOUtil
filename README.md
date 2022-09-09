@@ -35,6 +35,7 @@ public class Main {
         }
         print();
         print(ints);
+        print(ints.toArray());
         printSep("-", ints.toArray());
     }
 }
