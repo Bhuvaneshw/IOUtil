@@ -16,7 +16,7 @@ allprojects {
 ### Add the dependency
 ```
 dependencies {
-    implementation 'com.github.bhuvaneshw:ioutils:v2.0'
+    implementation 'com.github.Bhuvaneshw.ioutil:IOUtil:v2.2'
 }
 ```
 
