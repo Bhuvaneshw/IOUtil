@@ -16,7 +16,7 @@ allprojects {
 ### Add the dependency
 ```
 dependencies {
-    implementation 'com.github.Bhuvaneshw.ioutil:IOUtil:v2.2'
+    implementation 'com.github.Bhuvaneshw:ioutil:v2.4'
 }
 ```
 
@@ -25,6 +25,8 @@ dependencies {
 
 ### Sample code
 ```
+import static com.acutecoder.bhuvanesh.IOUtil.*;
+
 public class Main {
     public static void main(String[] args) {
         String name = input("Enter your name: ");
