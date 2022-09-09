@@ -42,4 +42,4 @@ public class Main {
 ```
 
 ### Output
-![image](screenshot.png)
+![image](output.png)
